@@ -1,0 +1,234 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden; 
+  display: flex;              
+  justify-content: center;     
+  align-items: center;  
+  background: #000; 
+}
+
+#frame {
+  width: 960px;
+  height: 540px;
+  position: relative;
+
+  background-image: url('introframe2.jpg'); /* 🔑 set background here */
+  background-size: cover;      /* 🔑 make it fully cover frame */
+  background-position: center; /* center the image */
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  overflow: hidden;           /* prevent internal scroll */
+}
+
+#frame2 {
+  width: 960px;
+  height: 540px;
+  position: relative;
+
+  background-image: url('introframe1.jpg'); /* 🔑 set background here */
+  background-size: cover;      /* 🔑 make it fully cover frame */
+  background-position: center; /* center the image */
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  overflow: hidden;           /* prevent internal scroll */
+}
+
+#frame3 {
+    width: 960px;
+    height: 540px;
+    position: relative;
+
+    background-image: url('introframe4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+
+h1 {
+        font-family: 'Jersey 10', helvetica, sans-serif;
+        font-size: 100px;
+        color: white;
+        letter-spacing: 8px; 
+        text-align: center;
+        margin-left: 25px;
+}
+h3 {
+        font-family: 'Jersey 25', helvetica, sans-serif;
+        font-size: 30px;
+        text-align: center;
+        color: #efefef;
+        letter-spacing: 1.2px; 
+        position: relative;
+        top: -90px;
+        
+}
+button {
+    font-family: 'Jersey 10', helvetica, sans-serif;
+    font-size: 60px;
+    color: white;
+    background-color: #d33333; 
+    border: white 2px solid;
+    border-radius: 5px;
+    padding: 10px 35px;
+    cursor: pointer;
+    border-radius: 10px;
+    position: absolute;
+    top: 75%; /* Adjust as needed */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3; 
+}
+
+h2 {
+    font-family: 'Jersey 10', helvetica, sans-serif;
+    font-size: 35px;
+    text-align: center;
+    color: white;
+    letter-spacing: 5px; 
+    position: absolute; /* Positions relative to the nearest positioned ancestor */
+    top: 2%; /* Example: 50% from the top */
+    left: 51%; /* Example: 50% from the left */
+    transform: translate(-50%, -50%); /* Centers it precisely */
+}
+
+textarea.dialoguebox {
+    font-family: 'Jersey 25', helvetica, sans-serif;
+    font-size: 26px;
+    color: black;
+    text-align: left;
+    background-color: #DAC387;
+    border-radius: 0px;
+    padding: 40px 50px 5px 50px;
+    width: 65%;
+    height: 150px;
+    position: absolute;
+    bottom: 30%; /* Adjust as needed */
+    left: -5%; 
+    resize: none; /* Prevent resizing */
+    overflow-y: hidden; 
+}
+nametag {
+    font-family: 'Jersey 25', helvetica, sans-serif;
+    font-size: 50px;
+    color: #333333;
+    background-color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 15px;
+    position: absolute;
+    top: 28%; /* Adjust as needed */
+    left: 5%; 
+}
+button.secondary {
+    font-family: 'Jersey 10', helvetica, sans-serif;
+    font-size: 45px;
+    color: white;
+    background-color: #28a745;
+    border: white 2px solid;
+    border-radius: 10px;
+    padding: 10px 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 80%; /* Adjust as needed */
+    left: 15%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s;
+}
+
+button.secondary:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+#missionBtn {
+  font-family: 'Jersey 10', helvetica, sans-serif;
+    font-size: 60px;
+    color: white;
+    background-color: #d33333; 
+    border: white 2px solid;
+    border-radius: 5px;
+    padding: 10px 35px;
+    cursor: pointer;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%; /* Adjust as needed */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+    transition: all 0.3s ease;
+}
+
+#missionBtn:hover {
+  transform: translateX(-50%) scale(1);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.7);
+}
+
+#missionBtn:active {
+  transform: translateX(-50%) scale(0.97);
+}
+
+
+#danger-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(200, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+#danger-overlay.active {
+  animation: dangerPulse 1s infinite;
+}
+
+@keyframes dangerPulse {
+  0%   { opacity: 0; }
+  50%  { opacity: 0.45; }
+  100% { opacity: 0; }
+}
+
+#timer {
+  font-family: 'Jersey 25',Arial, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: #ff3b3b;
+  background-color: #efefef;
+  padding : 10px 20px;
+  border-radius: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#gameframe1 {
+    background-color: black;
+ 
+
+}
+
