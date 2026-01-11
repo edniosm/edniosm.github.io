@@ -1,0 +1,293 @@
+/* -------------------- Base Layout -------------------- */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: #000;
+}
+
+#frame, #frame2, #frame3, #frame4 {
+  width: 960px;
+  height: 540px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* -------------------- Background Images -------------------- */
+#frame { background-image: url('introframe2.jpg'); }
+#frame2 { background-image: url('introframe1.jpg'); }
+#frame3 { background-image: url('introframe4.png'); }
+#frame4 { background-image: url('gameframe1.jpg'); }
+
+/* -------------------- Headings -------------------- */
+h1 {
+  font-family: 'Jersey 10', sans-serif;
+  font-size: 100px;
+  color: white;
+  letter-spacing: 8px;
+  text-align: center;
+  margin: 0;
+}
+h2 {
+  font-family: 'Jersey 10', sans-serif;
+  font-size: 35px;
+  color: white;
+  letter-spacing: 5px;
+  text-align: center;
+}
+h3, p {
+  font-family: 'Jersey 25', sans-serif;
+  color: hsl(0,0%,9%);
+  margin: 0;
+  text-align: center;
+}
+
+.case-title {
+  font-family: 'Jersey 10', helvetica, sans-serif;
+  font-size: 50px;
+  letter-spacing: 3px;
+  color: #000000;
+  margin: 0 0 12px 0; 
+}
+
+
+/* -------------------- Buttons -------------------- */
+button, .quiz-option {
+  font-family: 'Jersey 10', sans-serif;
+  font-size: 28px;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 25px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+button.primary, #missionBtn {
+  background-color: #d33333;
+}
+button.primary:hover, #missionBtn:hover {
+  background-color: #0056b3;
+}
+
+button.secondary {
+  background-color: #28a745;
+}
+button.secondary:hover { background-color: #218838; }
+
+/* -------------------- Laptop -------------------- */
+.laptop {
+  position: relative;
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.laptop-screen {
+  width: 100%;
+  height: 320px;
+  background: linear-gradient(180deg, #cff5ff, #a9e8ff);
+  padding: 20px;
+  border-radius: 12px 12px 6px 6px;
+  box-shadow: 0 0 0 4px #1c2a4a, 0 20px 40px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically center content */
+  align-items: center;
+  text-align: center;
+}
+.laptop-base {
+  width: 120%;
+  height: 16px;
+  background: linear-gradient(180deg, #777, #444);
+  border-radius: 0 0 24px 24px;
+  margin-top: 4px;
+}
+
+/* -------------------- Dialogue & Nametag -------------------- */
+textarea.dialoguebox {
+  font-size: 26px;
+  width: 65%;
+  height: 150px;
+  padding: 20px;
+  background-color: #DAC387;
+  color: black;
+  resize: none;
+  overflow-y: hidden;
+}
+nametag {
+  font-size: 40px;
+  padding: 5px 15px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 12px;
+}
+
+
+.quiz-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 10px;
+}
+.quiz-option {
+  background-color: #1f2a44;
+  color: white;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 25px;
+}
+
+.quiz-question {
+  font-family: 'Jersey 25', helvetica, sans-serif;
+  font-size: 23px;
+  color: #111;
+  text-align: center;
+  line-height: 1;
+  max-width: 580px;
+  margin: 0 auto 18px auto;
+  padding: 0 20px;
+}
+.quiz-option:hover { background-color: #3a4fff; }
+.quiz-option.correct { background-color: #16a34a; }
+.quiz-option.wrong { background-color: #dc2626; }
+
+.quiz-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+}
+
+
+/* -------------------- Modal -------------------- */
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.78);
+  z-index: 999;
+}
+
+
+.hidden { display: none; }
+.modal-content {
+  background-color: #ffffff;
+  width: 420px;
+  max-height: 80vh;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 12px;
+}
+.modal-content h2 { color: #1e3a8a; margin-bottom: 10px; }
+.modal-content p { margin-bottom: 12px; font-size: 28px; }
+.modal-content ul {
+  text-align: left;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+.modal-content button {
+  padding: 10px 22px;
+  background: #2563eb;
+  color: white;
+  border-radius: 8px;
+}
+.modal-content button:hover { background: #1d4ed8; }
+
+.modal-content.safe {
+  border: 3px solid #3cb371;
+}
+
+.modal-content.risky {
+  border: 3px solid #e74c3c;
+}
+
+.modal-content.safe h2,
+.modal-content.risky h2 {
+  color: #2563eb;
+}
+
+.modal-content.safe .feedback-text {
+  color: #3cb371;
+}
+
+.modal-content.risky .feedback-text {
+  color: #e74c3c;
+}
+
+.feedback-points {
+  padding: 0;
+  margin: 8px 0 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feedback-points li {
+  position: relative;
+  padding-left: 22px;
+  font-family: 'Jersey 25', helvetica, sans-serif;
+  font-size: 22px;
+  line-height: 1.3;
+  color: #111827;
+}
+
+.safe {
+  color: #3cb371; 
+}
+
+.risky {
+  color: #e74c3c; 
+}
+
+
+.round-label {
+  font-family: 'Jersey 10', helvetica, sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #1e3a8a;
+}
+
+.restart-btn {
+  background-color: #2563eb;
+  margin-top: 5px;
+  padding: 12px 24px;
+  font-size: 25px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+ .restart-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.hidden {
+  display: none;
+}
+

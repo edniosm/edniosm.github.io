@@ -4,8 +4,8 @@ html, body {
   margin: 0;
   overflow: hidden; 
   display: flex;              
-  justify-content: center;     
-  align-items: center;  
+  justify-content: flex-start;     
+  align-items: flex-start;  
   background: #000; 
 }
 
@@ -14,9 +14,9 @@ html, body {
   height: 540px;
   position: relative;
 
-  background-image: url('introframe2.jpg'); /* 🔑 set background here */
-  background-size: cover;      /* 🔑 make it fully cover frame */
-  background-position: center; /* center the image */
+  background-image: url('introframe2.jpg'); 
+  background-size: cover;      
+  background-position: center; 
   background-repeat: no-repeat;
 
   display: flex;
@@ -53,6 +53,22 @@ html, body {
     position: relative;
 
     background-image: url('introframe4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+ #frame4 {
+    width: 960px;
+    height: 540px;
+    position: relative;
+
+    background-image: url('gameframe1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -228,7 +244,202 @@ button.secondary:hover {
 
 #gameframe1 {
     background-color: black;
- 
 
 }
+
+#continueBtn1 {
+  font-family: 'Jersey 10', helvetica, sans-serif;
+    font-size: 45px;
+    color: white;
+    background-color: #d33333; 
+    border: white 2px solid;
+    border-radius: 5px;
+    padding: 5px 35px;
+    cursor: pointer;
+    border-radius: 10px;
+    position: absolute;
+    top: 90%; /* Adjust as needed */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s;
+}
+
+#continueBtn1:hover {
+    background-color: #0056b3; 
+
+}
+
+.laptop {
+  position: relative;
+  width: 650px;       /* overall laptop width */
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.laptop-screen {
+  width: 100%;  /* same width as laptop container */
+  height: 320px;
+  background: linear-gradient(180deg, #cff5ff, #b4ebff);
+  color: #ffffff;
+  padding: 28px 32px;
+  border-radius: 12px 12px 6px 6px;
+  box-shadow:
+    0 0 0 4px #1c2a4a,
+    0 20px 40px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  flex-direction: column;
+}
+
+.laptop-base {
+  width: 120%;          /* exactly same width as screen */
+  height: 16px;
+  background: linear-gradient(180deg, #777, #444);
+  border-radius: 0 0 24px 24px;
+  margin-top: 4.5px;    /* small hinge gap */
+}
+
+
+h4 {
+    font-family: 'Jersey 25', helvetica, sans-serif;
+    font-size: 50px;
+    text-align: center;
+    color: hsl(0, 0%, 9%);
+    letter-spacing: 1.2px; 
+    position: relative;
+    top: -80px;
+}
+
+p {
+    font-family: 'Jersey 25', helvetica, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    color: hsl(0, 0%, 9%);
+    letter-spacing: 1.2px; 
+    position: relative;
+    top: -140px;
+}
+
+.quiz-buttons {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  position: relative !important;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto 0 auto;
+  top: -120px;
+}
+
+.quiz-option {
+  position: relative !important; 
+  display: block !important;
+
+  width: 100%;
+  padding: 12px 0;
+
+  font-size: 25px;
+  background: #1f2a44;
+  color: white;
+
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.quiz-option:hover {
+  background: #3a4fff;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.781);
+}
+
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #ffffff;
+  width: 420px;
+  height: auto;
+  max-height: 80vh;
+  padding: 10px 30px;
+  font-size: 25px;
+  border-radius: 12px;
+  text-align: center;
+  font-family: "Jersey 25", Arial, sans-serif;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.modal-content ul {
+  list-style: disc;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.modal-content button {
+  padding: 10px 22px;
+  background: rgb(37, 99, 235);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background: #1d4ed8;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  margin-bottom: 12px;
+}
+
+.modal-content ul {
+  margin-bottom: 16px;
+}
+
+.feedback-title {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: rgb(37, 99, 235);
+}
+.feedback-text {
+  font-size: 30px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.feedback-points {
+  font-family: "Jersey 25", helvetica, sans-serif;
+}
+
+.feedback-text.safe {
+  color: #16a34a; /* green */
+  font-weight: 600;
+}
+
+.feedback-text.risky {
+  color: #dc2626; /* red */
+  font-weight: 600;
+}
+
 

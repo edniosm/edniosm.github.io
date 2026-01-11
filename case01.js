@@ -1,6 +1,4 @@
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
   let timeLeft = 40;
 
@@ -34,6 +32,86 @@ document.addEventListener("DOMContentLoaded", () => {
     timeLeft--;
   }, 1000);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const options = document.querySelectorAll(".quiz-option");
+
+  options.forEach(option => {
+    option.addEventListener("click", () => {
+      const isCorrect = option.dataset.correct === "true";
+      showFeedback(isCorrect);
+    });
+  });
+});
+
+function showFeedback(isCorrect) {
+  const title = document.getElementById("feedbackTitle");
+  const text = document.getElementById("feedbackText");
+  const list = document.getElementById("feedbackList");
+
+  list.innerHTML = "";
+
+  if (isCorrect) {
+    title.innerText = "Good Choice";
+    text.innerText = "You identified a safer response.";
+
+    [
+      "Official platforms reduce impersonation risks",
+      "Avoid sharing sensitive personal data",
+      "Scammers often pressure for quick verification"
+    ].forEach(point => {
+      const li = document.createElement("li");
+      li.textContent = point;
+      list.appendChild(li);
+    });
+  } else {
+    title.innerText = "Risk Detected";
+    text.innerText = "This choice could expose you to impersonation.";
+
+    [
+      "NRIC and personal details can be misused",
+      "Fake recruiters often create urgency",
+      "Always verify through official channels"
+    ].forEach(point => {
+      const li = document.createElement("li");
+      li.textContent = point;
+      list.appendChild(li);
+    });
+  }
+
+  document.getElementById("feedbackModal").classList.remove("hidden");
+}
+
+function closeFeedback() {
+  document.getElementById("feedbackModal").classList.add("hidden");
+}
+
+
+const BGM_TIME_KEY = 'lol_bgm_time';
+const BGM_PLAY_KEY = 'lol_bgm_playing';
+
+const bgm = document.getElementById('bgm');
+
+function saveBgmTime() {
+  if (bgm) return;
+  try {localStorage.setItem(BGM_TIME_KEY, String(bgm.currentTime || 0));} catch(e) {}
+}
+
+function stopBgmSaving() {
+  if (bgmSaveTimer) {
+    clearInterval(bgmSaveTimer);
+    bgmSaveTimer = null;
+  }
+}
+
+function saveBgmSaving () {
+  stopBgmSaving();
+  bgmSaveTimer = setInterval(saveBgmTime, 500);
+}
+
+function initBgm() {
+  if (!bgm) return;
+}
 
 
 
